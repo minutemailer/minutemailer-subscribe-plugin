@@ -1,126 +1,52 @@
 === Plugin Name ===
 Contributors: minutemailer
-Tags: subscribe, email
+Tags: subscribe, email, signup, marketing, contacts, subscribers
 Requires at least: 3.0.1
 Tested up to: 4.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A plugin to add a subscribe widget to your Wordpress blog. You need a free account on Minutemailer.com to use the plugin.
+Get more email contacts by adding a subscribe widget to your Wordpress blog. You need a free account on Minutemailer.com to use the plugin.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+Minutemailer is a marketing service that combines email and social media in an easy to use but powerful package. Use the Minutemailer Subscribe plugin to collect email addresses from visitors to your website.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
-
-A few notes about the sections above:
-
-*   "Contributors" is a comma separated list of wordpress.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
-
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+To use the Minutemailer plugin please signup for a [free Minutemailer account](https://minutemailer.com "Marketing Simplified").
 
 == Installation ==
 
 This section describes how to install the plugin and get it working.
 
-1. Upload the plugin files to the `/wp-content/plugins/plugin-name` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
-1. (Make your instructions match the desired user flow for activating and installing your plugin. Include any steps that might be needed for explanatory purposes)
+1. Upload the plugin files to the `/wp-content/plugins/wp-subscribe-plugin` directory, or install the plugin through the WordPress plugins screen directly.
+2. Activate the plugin through the 'Plugins' screen in WordPress
+3. Go to your Widgets menu
+4. Add the Minutemailer widget to your Sidebar
+5. Click on the Minutemailer Widget and customize the text fields as you like
+6. Add the list token from the contact list on Minutemailer that you want to use
+6. Click Save and the widget should be live on your website
 
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Where can I find the list token? =
 
-An answer to that question.
+Go to your Minutemailer account and click on Contacts. Choose a contact list that you would like to add contacts to. Go to Add to website and there you will find the contact list token.
 
-= What about foo bar? =
+= Do I need to pay anything to use Minutemailer? =
 
-Answer to foo bar dilemma.
+No, there is a fully functional free account. If you need more contacts or emails than the free account allows you need to upgrade to a paid account.
 
-== Screenshots ==
+= Can I change the styling of the fields? =
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+Yes, the styling of the text fields and button should follow your theme styling for the sidebar but you can always give them their unique design by setting the styling in your CSS file.
+
+= Will this work with other email softwares? =
+
+No, right now this is only made for Minutemailer.
+
 
 == Changelog ==
 
 = 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
-
-== Upgrade Notice ==
-
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
-
-
-# wp-subscribe-plugin
-Minutemailer Wordpress plugin
-
-A plugin to add a subscribe widget to your Wordpress blog. Install the plugin in your wp-content/plugins folder. You need a free account on Minutemailer.com to use the plugin.
-
-1. Just activate the plugin. 
-2. Go to your widgets menu.
-3. Add the Minutemailer plugin.
-4. Edit the text fields.
-5. Add the list token from the contact list on Minutemailer that you want to use.
-6. Save and the widget is live on your Wordpress site.
-
-Enjoy your new contacts!
+* First release.
