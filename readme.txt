@@ -1,6 +1,6 @@
-=== Plugin Name ===
+=== Minutemailer Subscribe ===
 Contributors: minutemailer
-Tags: subscribe, email, signup, marketing, contacts, subscribers
+Tags: subscribe, email, signup, marketing, contacts, subscribers, minutemailer
 Requires at least: 3.0.1
 Tested up to: 4.4.2
 License: GPLv2 or later
@@ -8,11 +8,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Get more email contacts by adding a subscribe widget to your Wordpress blog. You need a free account on Minutemailer.com to use the plugin.
 
+
 == Description ==
 
 Minutemailer is a marketing service that combines email and social media in an easy to use but powerful package. Use the Minutemailer Subscribe plugin to collect email addresses from visitors to your website.
 
 To use the Minutemailer plugin please signup for a [free Minutemailer account](https://minutemailer.com "Marketing Simplified").
+
 
 == Installation ==
 
@@ -35,7 +37,7 @@ Go to your Minutemailer account and click on Contacts. Choose a contact list tha
 
 = Do I need to pay anything to use Minutemailer? =
 
-No, there is a fully functional free account. If you need more contacts or emails than the free account allows you need to upgrade to a paid account.
+No, there is a fully functional free account. Just go to [Minutemailer.com](https://minutemailer.com "Marketing Simplified") to signup. If you need more contacts or emails than the free account allows you need to upgrade to a paid account.
 
 = Can I change the styling of the fields? =
 
