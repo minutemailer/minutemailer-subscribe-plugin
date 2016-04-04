@@ -1,6 +1,6 @@
 === Minutemailer Subscribe ===
 Contributors: minutemailer
-Tags: subscribe, email, signup, marketing, contacts, subscribers, minutemailer
+Tags: subscribe, email, signup, marketing, contacts, subscribers, minutemailer, newsletter, widget, integrations, contact form, form, mailing list, sign up, sign-up form, opt-in forms
 Requires at least: 3.0.1
 Tested up to: 4.4.2
 Stable tag: trunk
