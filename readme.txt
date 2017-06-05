@@ -21,7 +21,7 @@ To use the Minutemailer plugin please signup for a [free Minutemailer account](h
 
 This section describes how to install the plugin and get it working.
 
-1. Upload the plugin files to the `/wp-content/plugins/wp-subscribe-plugin` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Go to your Widgets menu.
 4. Add the Minutemailer widget to your Sidebar.
