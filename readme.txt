@@ -2,7 +2,7 @@
 Contributors: minutemailer
 Tags: subscribe, email, signup, marketing, contacts, subscribers, minutemailer, newsletter, widget, integrations, contact form, form, mailing list, sign up, sign-up form, opt-in forms
 Requires at least: 3.0.1
-Tested up to: 4.5.1
+Tested up to: 4.9.4
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -55,3 +55,5 @@ No, right now this is only made for Minutemailer.
 * First release.
 = 1.0.1 =
 * Added plugin icon.
+= 1.0.2 =
+* Switched to new subscribe url
