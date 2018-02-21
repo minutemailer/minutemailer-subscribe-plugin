@@ -3,7 +3,7 @@
  * Plugin Name: Minutemailer Subscribe
  * Plugin URI: https://minutemailer.com
  * Description: Widget for signing up people to your Minutemailer contact list. Just add the widget to your sidebar and enter the list token of the contact list you want to add people to. Get your free Minutemailer account on minutemailer.com and start sending emails and scheduling content to social media.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Minutemailer
  * Author URI: https://minutemailer.com
  * License: GPL2
@@ -96,7 +96,7 @@ class minutemailer extends WP_Widget {
 		if ($headline) { echo $before_title.$headline.$after_title; }
 
 		// Display form ?>
-		<form class="minutemailer-signup" action="https://minutemailer.com/subscribe/<?php echo $list_token; ?>" method="post">
+		<form class="minutemailer-signup" action="https://subscribe.minutemailer.com/<?php echo $list_token; ?>" method="post">
 			<p>
 				<label for="minutemailer_signup_name">
 					<span class="screen-reader-text"><?php echo $name_label; ?></span>
