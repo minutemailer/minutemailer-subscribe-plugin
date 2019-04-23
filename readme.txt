@@ -12,9 +12,9 @@ Get more email contacts by adding a subscribe widget to your Wordpress blog. You
 
 == Description ==
 
-Minutemailer is a marketing service that combines email and social media in an easy to use but powerful package. Use the Minutemailer Subscribe plugin to collect email addresses from visitors to your website.
+Minutemailer is an online tool for email marketing. Create, schedule and send regular 'smart' e-mails and newsletters. Simple, functional and affordable online marketing. Use the Minutemailer Subscribe plugin to collect email addresses from visitors to your website.
 
-To use the Minutemailer plugin please signup for a [free Minutemailer account](https://minutemailer.com "Marketing Simplified").
+To use the Minutemailer plugin please signup for a [free Minutemailer account](https://minutemailer.com "Send beautiful newsletters").
 
 
 == Installation ==
@@ -38,7 +38,7 @@ Go to your Minutemailer account and click on Contacts. Choose a contact list tha
 
 = Do I need to pay anything to use Minutemailer? =
 
-No, there is a fully functional free account. Just go to [Minutemailer.com](https://minutemailer.com "Marketing Simplified") to signup. If you need more contacts or emails than the free account allows you need to upgrade to a paid account.
+No, there is a fully functional free account. Just go to [Minutemailer.com](https://minutemailer.com "Send beautiful newsletters") to signup. If you need to send more emails than the free account allows you need to upgrade to a paid account.
 
 = Can I change the styling of the fields? =
 
