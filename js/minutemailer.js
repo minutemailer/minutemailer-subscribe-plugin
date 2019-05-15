@@ -32,14 +32,12 @@ jQuery(document).ready(function($){
 				'Access-Control-Allow-Credentials': true
 			},
 			success: function(data) {
-				var result = '';
-				if (data.error != false || data.status != '200') {
-					result = 'An unknown error has occured.';
+				if (data.error !== false || data.status !== '200') {
+					$resultMessage.html('An unknown error has occured.');
 				}
 				// If any data is present show return message from Minutemailer.
 				else if(data.data){
-					result = data.data;
-					$resultMessage.html(result);
+					$resultMessage.html(data.data);
 				}
 
 				// If data is empty the submit was successful.

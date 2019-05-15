@@ -1,0 +1,95 @@
+# MinuteMailer Subscribe Widget Plugin Pot
+# Copyright 2019 ...
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Minutemailer Subscribe v1.0.2\n"
+"POT-Creation-Date: 2019-04-15 10:52+0200\n"
+"PO-Revision-Date: 2019-04-15 11:07+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: minutemailer-subscribe.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: \n"
+"Last-Translator: \n"
+"Language: es\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#. Author of the plugin/theme
+#: minutemailer-subscribe.php:18
+msgid "Minutemailer"
+msgstr "Minutemailer"
+
+#: minutemailer-subscribe.php:31
+msgid "Subscribe to news"
+msgstr "Suscribirse a las noticias"
+
+#: minutemailer-subscribe.php:32
+msgid "Name"
+msgstr "Nombre"
+
+#: minutemailer-subscribe.php:33
+msgid "E-mail"
+msgstr "Email"
+
+#: minutemailer-subscribe.php:34
+msgid "Subscribe"
+msgstr "Subscribe"
+
+#: minutemailer-subscribe.php:36
+msgid "Thank you for subscribing!"
+msgstr "¡Gracias por suscribirse!"
+
+#: minutemailer-subscribe.php:41
+msgid "Headline"
+msgstr "Titular"
+
+#: minutemailer-subscribe.php:46
+msgid "Name field"
+msgstr "Nombre"
+
+#: minutemailer-subscribe.php:51
+msgid "Email field"
+msgstr "Email"
+
+#: minutemailer-subscribe.php:56
+msgid "Signup button"
+msgstr "Botón de registro"
+
+#: minutemailer-subscribe.php:61
+msgid "List token"
+msgstr "Token de lista"
+
+#: minutemailer-subscribe.php:66
+msgid "Thank you message"
+msgstr "Mensaje de agradecimiento"
+
+#. Plugin Name of the plugin/theme
+msgid "Minutemailer Subscribe"
+msgstr "Minutemailer Subscribe"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://minutemailer.com"
+msgstr "https://minutemailer.com"
+
+#. Description of the plugin/theme
+msgid ""
+"Widget for signing up people to your Minutemailer contact list. Just add the "
+"widget to your sidebar and enter the list token of the contact list you want "
+"to add people to. Get your free Minutemailer account on minutemailer.com and "
+"start sending emails and scheduling content to social media."
+msgstr ""
+"Widget para registrar personas en tu lista de contactos de Minutemailer. "
+"Solo agrega el widget a la barra lateral e ingresa el token de la lista de "
+"contactos a la que deseas agregar personas. Obtenga su cuenta de correo "
+"electrónico gratuita en minutemailer.com y comience a enviar correos "
+"electrónicos y a programar contenido en las redes sociales."
