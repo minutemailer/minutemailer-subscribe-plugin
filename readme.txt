@@ -2,7 +2,7 @@
 Contributors: minutemailer
 Tags: subscribe, email, signup, marketing, contacts, subscribers, minutemailer, newsletter, widget, integrations, contact form, form, mailing list, sign up, sign-up form, opt-in forms
 Requires at least: 3.0.1
-Tested up to: 4.9.4
+Tested up to: 5.2
 Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ Get more email contacts by adding a subscribe widget to your Wordpress blog. You
 
 Minutemailer is an online tool for email marketing. Create, schedule and send regular 'smart' e-mails and newsletters. Simple, functional and affordable online marketing. Use the Minutemailer Subscribe plugin to collect email addresses from visitors to your website.
 
-To use the Minutemailer plugin please signup for a [free Minutemailer account](https://minutemailer.com "Send beautiful newsletters").
+To use the Minutemailer plugin please signup for a [free Minutemailer account](https://minutemailer.com "Great newsletters fast").
 
 
 == Installation ==
@@ -57,3 +57,5 @@ No, right now this is only made for Minutemailer.
 * Added plugin icon.
 = 1.0.2 =
 * Switched to new subscribe url
+= 1.0.3 =
+* Language support
