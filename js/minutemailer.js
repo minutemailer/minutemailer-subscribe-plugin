@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
 				'Access-Control-Allow-Credentials': true
 			},
 			success: function(data) {
-				if (data.error !== false || data.status !== '200') {
+				if (data.error !== false || data.status !== 200) {
 					$resultMessage.html('An unknown error has occured.');
 				}
 				// If any data is present show return message from Minutemailer.
