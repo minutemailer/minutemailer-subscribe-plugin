@@ -15,7 +15,10 @@ class MinuteMailer extends WP_Widget {
 
 	// Constructor
 	function __construct() {
-		parent::__construct(false, $name = __('Minutemailer', 'minutemailer_widget_plugin') );
+        $widget_ops = array(
+            'description' => 'Minutemailer subscribe form',
+        );
+		parent::__construct(false, $name = __('Minutemailer Subscribe', 'minutemailer_widget_plugin'), $widget_ops );
 	}
 
 	// Widget WP-admin
