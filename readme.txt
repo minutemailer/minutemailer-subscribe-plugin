@@ -57,5 +57,5 @@ No, right now this is only made for Minutemailer.
 * Added plugin icon.
 = 1.0.2 =
 * Switched to new subscribe url
-= 1.0.3 =
+= 1.1.0 =
 * Language support
