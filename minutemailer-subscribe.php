@@ -181,3 +181,12 @@ function minutemailer_plugin_init_textdomain() {
     load_plugin_textdomain( 'minutemailer-subscribe', false, basename( dirname( __FILE__ ) ) . '/languages' );
 }
 add_action('init', 'minutemailer_plugin_init_textdomain');
+
+
+// Redirect to settings page on Activation
+function minutemailer_activation_redirect( $plugin ) {
+    if( $plugin == plugin_basename( __FILE__ ) ) {
+        exit( wp_redirect( admin_url( 'options-general.php?page=minutemailer_plugin' ) ) );
+    }
+}
+add_action( 'activated_plugin', 'minutemailer_activation_redirect' );
