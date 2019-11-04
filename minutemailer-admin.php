@@ -11,13 +11,46 @@ function minutemailer_plugin_admin_add_page() {
 add_action('admin_init', 'minutemailer_plugin_admin_init');
 function minutemailer_plugin_admin_init(){
     register_setting( 'plugin_options', 'plugin_options', 'minutemailer_plugin_options_validate' );
-    add_settings_section('plugin_main', 'Main Settings', 'minutemailer_plugin_section_text', 'plugin');
-    add_settings_field('minuatemailer_plugin_api_key', 'Your Minutemailer API Key', 'minutemailer_plugin_setting_string', 'plugin', 'plugin_main');
+    add_settings_section('plugin_main', '', 'minutemailer_plugin_section_text', 'plugin');
+    //add_settings_field('minuatemailer_plugin_api_key', 'Your Minutemailer API Key', 'minutemailer_plugin_setting_string', 'plugin', 'plugin_main');
 }
 
 // Plugin settings callback
 function minutemailer_plugin_section_text() {
-    //echo '<p>Main description of this section here.</p>';
+    echo '<p>'.__('<a href="https://minutemailer.com" target="_blank">Minutemailer</a> is an online tool for email marketing. Create, schedule and send regular ‘smart’ e-mails and free newsletters. Simple, functional and affordable online marketing that gets you started in minutes.', 'minutemailer-subscribe').'</p>';
+    echo '<p>'.__('To add the Minutemailer subscribe widget first you need to create an API token and paste it below.', 'minutemailer-subscribe').'</p>';
+    echo '<p><a href="https://app.minutemailer.com/u/settings/api" target="_blank" type="submit" class="button-secondary">'.__('Create token', 'minutemailer-subscribe').'</a></p>';
+
+    $options = get_option('plugin_options');
+    if (!isset($options['minutemailer_api_key'])) {
+        $options['minutemailer_api_key'] = '';
+    }
+    echo "<p><textarea id='minuatemailer_plugin_api_key' name='plugin_options[minutemailer_api_key]' cols='60' rows='18'>". $options['minutemailer_api_key'] . "</textarea></p>";
+
+    // check if the user have submitted the settings
+    // wordpress will add the "settings-updated" $_GET parameter to the url
+    if ( isset( $_GET['settings-updated'] ) ) {
+       // add the function called
+        // Get lists
+        $minutemailer_plugin_options = get_option( 'plugin_options' );
+        // print_r($my_options);
+        $minutemailer_api_key = $minutemailer_plugin_options['minutemailer_api_key'];
+
+        require_once('includes/curl.php');
+        $url = 'https://api.test.minutemailer.com/v1/contactlists';
+        $authorization = 'Authorization: Bearer ' . $minutemailer_api_key;
+        $response = minutemailer_curl_send_request(NULL, $url, 'GET', $authorization);
+
+        if (!$response || isset($response->error)) { 
+            if ($response->error->code == 401) { ?>
+                <p><?php echo $response->error->message; ?></p><?php
+            } else { ?>
+                <p><?php _e('Something went wrong connecting to the Minutemailer API.', 'minutemailer-subscribe'); ?></p><?php
+            }
+        } else { ?>
+             <p><?php _e('Successfully connected to the Minutemailer API.', 'minutemailer-subscribe'); ?></p><?php
+        }
+    }
 }
 
 
