@@ -2,14 +2,17 @@
 /**
  * Plugin Name: Minutemailer Subscribe
  * Plugin URI: https://minutemailer.com
- * Description: Widget for signing up people to your Minutemailer contact list. Just add the widget to your sidebar and enter the list token of the contact list you want to add people to. Get your free Minutemailer account on minutemailer.com and start sending beautiful newsletters and smart emails.
- * Version: 1.1.0
+ * Description: Widget for signing up people to your Minutemailer contact list. Just add the widget to your sidebar and enter the list token of the contact list you want to add people to. Get your free Minutemailer account on minutemailer.com and start sending emails and scheduling content to social media.
+ * Version: 1.1.1
  * Author: Minutemailer
  * Author URI: https://minutemailer.com
  * Text Domain: minutemailer-subscribe
  * Domain Path: /languages
  * License: GPL2
  */
+
+require_once('minutemailer-admin.php');
+
 
 class MinuteMailer extends WP_Widget {
 
@@ -23,22 +26,39 @@ class MinuteMailer extends WP_Widget {
 
 	// Widget WP-admin
 	function form($instance) {
+
+        $headline = __('Subscribe to news', 'minutemailer-subscribe');
+        $name_label = __('Name', 'minutemailer-subscribe');
+        $email_label = __('E-mail', 'minutemailer-subscribe');
+        $signupbutton_text = __('Subscribe', 'minutemailer-subscribe');
+        // $list_token = '';
+        $list_id = '';
+        $thank_you_message = __('Thank you for subscribing!', 'minutemailer-subscribe');
+
 		if($instance) {
 		     $headline = esc_attr($instance['headline']);
 		     $name_label = esc_attr($instance['name_label']);
 		     $email_label = esc_attr($instance['email_label']);
 		     $signupbutton_text = esc_textarea($instance['signupbutton_text']);
-		     $list_token = esc_textarea($instance['list_token']);
+		     // $list_token = esc_textarea($instance['list_token']);
+             $list_id = esc_textarea($instance['list_id']);
 		     $thank_you_message = esc_textarea($instance['thank_you_message']);
-		} else {
-		     $headline = __('Subscribe to news', 'minutemailer-subscribe');
-		     $name_label = __('Name', 'minutemailer-subscribe');
-		     $email_label = __('E-mail', 'minutemailer-subscribe');
-		     $signupbutton_text = __('Subscribe', 'minutemailer-subscribe');
-		     $list_token = '';
-		     $thank_you_message = __('Thank you for subscribing!', 'minutemailer-subscribe');
 		}
-		?>
+
+		// Get lists
+        $minutemailer_plugin_options = get_option( 'plugin_options' );
+		// print_r($my_options);
+        $minutemailer_api_key = $minutemailer_plugin_options['minutemailer_api_key'];
+
+        require_once('includes/curl.php');
+        $url = 'https://api.test.minutemailer.com/v1/contactlists';
+        $authorization = 'Authorization: Bearer ' . $minutemailer_api_key;
+        $response = minutemailer_curl_send_request(NULL, $url, 'GET', $authorization);
+
+        if (!$response) { ?>
+            <p><?php _e('Something went wrong connecting to the Minutemailer API.', 'minutemailer-subscribe'); ?></p>
+            <?php
+        } ?>
 
 		<p>
 		<label for="<?php echo $this->get_field_id('headline'); ?>"><?php _e('Headline', 'minutemailer-subscribe'); ?>:</label>
@@ -59,11 +79,22 @@ class MinuteMailer extends WP_Widget {
 		<label for="<?php echo $this->get_field_id('signupbutton_text'); ?>"><?php _e('Signup button', 'minutemailer-subscribe'); ?>:</label>
 		<input class="widefat" id="<?php echo $this->get_field_id('signupbutton_text'); ?>" name="<?php echo $this->get_field_name('signupbutton_text'); ?>" type="text" value="<?php echo $signupbutton_text; ?>" />
 		</p>
-
+<?php /*
 		<p>
 		<label for="<?php echo $this->get_field_id('list_token'); ?>"><?php _e('List token', 'minutemailer-subscribe'); ?>:</label>
 		<input class="widefat" id="<?php echo $this->get_field_id('list_token'); ?>" name="<?php echo $this->get_field_name('list_token'); ?>" type="text" value="<?php echo $list_token; ?>" />
 		</p>
+*/ ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('list_id'); ?>"><?php _e('List', 'minutemailer-subscribe'); ?>:</label>
+            <select id="<?php echo $this->get_field_id('list_id'); ?>" name="<?php echo $this->get_field_name('list_id'); ?>" class="widefat">
+                <?php
+                foreach ($response->contact_lists as $list_item) {
+                    ?>
+                    <option <?php selected( $list_id, $list_item->_id ); ?> value="<?php echo $list_item->_id; ?>"><?php echo $list_item->name; ?></option><?php
+                } ?>
+            </select>
+        </p>
 
 		<p>
 		<label for="<?php echo $this->get_field_id('thank_you_message'); ?>"><?php _e('Thank you message', 'minutemailer-subscribe'); ?>:</label>
@@ -79,7 +110,8 @@ class MinuteMailer extends WP_Widget {
 		$instance['name_label'] = strip_tags($new_instance['name_label']);
 		$instance['email_label'] = strip_tags($new_instance['email_label']);
 		$instance['signupbutton_text'] = strip_tags($new_instance['signupbutton_text']);
-		$instance['list_token'] = strip_tags($new_instance['list_token']);
+        $instance['list_token'] = strip_tags($new_instance['list_token']);
+        $instance['list_id'] = strip_tags($new_instance['list_id']);
 		$instance['thank_you_message'] = strip_tags($new_instance['thank_you_message']);
 
 		return $instance;
@@ -91,7 +123,8 @@ class MinuteMailer extends WP_Widget {
 		$name_label = $instance['name_label'];
 		$email_label = $instance['email_label'];
 		$signupbutton_text = $instance['signupbutton_text'];
-		$list_token = $instance['list_token'];
+        $list_token = $instance['list_token'];
+        $list_id = $instance['list_id'];
 		$thank_you_message = $instance['thank_you_message'];
 
         echo $args['before_widget'];
@@ -101,8 +134,11 @@ class MinuteMailer extends WP_Widget {
 		    echo $args['before_title'] . $headline . $args['after_title'];
 		}
 
+        // https://subscribe.minutemailer.com/
+        // https://subscribe.test.minutemailer.com/
+
 		// Display form ?>
-		<form class="minutemailer-signup" action="https://subscribe.minutemailer.com/<?php echo $list_token; ?>" method="post">
+		<form class="minutemailer-signup" action="https://subscribe.minutemailer.com/<?php echo $list_id; ?>" method="post">
 			<p>
 				<label for="minutemailer_signup_name">
 					<span class="screen-reader-text"><?php echo $name_label; ?></span>
@@ -126,6 +162,7 @@ class MinuteMailer extends WP_Widget {
         echo $args['after_widget'];
 	}
 }
+
 
 // Register widget
 add_action('widgets_init', create_function('', 'return register_widget("minutemailer");'));
