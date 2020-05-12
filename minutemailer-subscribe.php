@@ -51,7 +51,7 @@ class MinuteMailer extends WP_Widget {
         $minutemailer_api_key = $minutemailer_plugin_options['minutemailer_api_key'];
 
         require_once('includes/curl.php');
-        $url = 'https://api.test.minutemailer.com/v1/contactlists';
+        $url = 'https://api.minutemailer.com/v1/contactlists';
         $authorization = 'Authorization: Bearer ' . $minutemailer_api_key;
         $response = minutemailer_curl_send_request(NULL, $url, 'GET', $authorization);
 
