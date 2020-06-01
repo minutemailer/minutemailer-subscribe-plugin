@@ -1,11 +1,15 @@
 <?php
 
+ // If this file is called directly, abort.
+ if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 // Add settings page
 add_action('admin_menu', 'minutemailer_plugin_admin_add_page');
 function minutemailer_plugin_admin_add_page() {
     add_options_page('Minutemailer', 'Minutemailer', 'manage_options', 'minutemailer_plugin', 'minutemailer_plugin_options_page');
 };
-
 
 // Define settings for the plugin
 add_action('admin_init', 'minutemailer_plugin_admin_init');
@@ -53,7 +57,6 @@ function minutemailer_plugin_section_text() {
     }
 }
 
-
 function minutemailer_plugin_setting_string() {
     $options = get_option('plugin_options');
     if (!isset($options['minutemailer_api_key'])) {
@@ -62,12 +65,10 @@ function minutemailer_plugin_setting_string() {
     echo "<textarea id='minuatemailer_plugin_api_key' name='plugin_options[minutemailer_api_key]' cols='60' rows='18'>". $options['minutemailer_api_key'] . "</textarea>";
 }
 
-
 // Validate input
 function minutemailer_plugin_options_validate($input) {
     return $input;
 }
-
 
 // Display the admin options page
 function minutemailer_plugin_options_page() {

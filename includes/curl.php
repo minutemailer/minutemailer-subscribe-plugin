@@ -1,4 +1,9 @@
 <?php
+ 
+ // If this file is called directly, abort.
+ if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 function minutemailer_curl_send_request($data, $endpoint, $httpMethod, $authorization = null)
 {
@@ -30,7 +35,6 @@ function minutemailer_curl_send_request($data, $endpoint, $httpMethod, $authoriz
     }
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($ch);
-    //$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $curl_errors = curl_error($ch);
     if($curl_errors) {
         echo "CURL Error: ".$curl_errors."\n";
