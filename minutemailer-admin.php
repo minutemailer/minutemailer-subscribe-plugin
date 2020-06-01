@@ -16,7 +16,6 @@ add_action('admin_init', 'minutemailer_plugin_admin_init');
 function minutemailer_plugin_admin_init(){
     register_setting( 'plugin_options', 'plugin_options', 'minutemailer_plugin_options_validate' );
     add_settings_section('plugin_main', '', 'minutemailer_plugin_section_text', 'plugin');
-    //add_settings_field('minuatemailer_plugin_api_key', 'Your Minutemailer API Key', 'minutemailer_plugin_setting_string', 'plugin', 'plugin_main');
 }
 
 // Plugin settings callback
