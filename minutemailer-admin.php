@@ -20,7 +20,7 @@ function minutemailer_plugin_admin_init(){
 
 // Plugin settings callback
 function minutemailer_plugin_section_text() {
-    echo '<p>'.__('<a href="https://minutemailer.com" target="_blank">Minutemailer</a> is an online tool for email marketing. Create, schedule and send regular ‘smart’ e-mails and free newsletters. Simple, functional and affordable online marketing that gets you started in minutes.', 'minutemailer-subscribe').'</p>';
+    echo '<p>'.__('<a href="https://minutemailer.com" target="_blank">Minutemailer</a> is an online email marketing tool for businesses. Create, schedule and send e-mail messages and newsletters for free. Use the plugin to easily get subscribers from your Wordpress blog.', 'minutemailer-subscribe').'</p>';
     echo '<p>'.__('To add the Minutemailer subscribe widget first you need to create an API token and paste it below.', 'minutemailer-subscribe').'</p>';
     echo '<p><a href="https://app.minutemailer.com/u/settings/api" target="_blank" type="submit" class="button-secondary">'.__('Create token', 'minutemailer-subscribe').'</a></p>';
 

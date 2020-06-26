@@ -80,15 +80,3 @@ msgstr "Minutemailer Subscribe"
 #. Author URI of the plugin/theme
 msgid "https://minutemailer.com"
 msgstr "https://minutemailer.com"
-
-#. Description of the plugin/theme
-msgid ""
-"Widget for signing up people to your Minutemailer contact list. Just add the "
-"widget to your sidebar and enter the list token of the contact list you want "
-"to add people to. Get your free Minutemailer account on minutemailer.com and "
-"start sending emails and scheduling content to social media."
-msgstr ""
-"Widget för Minutemailer kontaktlista. Just add the widget to your sidebar "
-"and enter the list token of the contact list you want to add people to. Get "
-"your free Minutemailer account on minutemailer.com and start sending emails "
-"and scheduling content to social media."
