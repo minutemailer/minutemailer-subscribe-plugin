@@ -1,7 +1,7 @@
 jQuery.noConflict();
 jQuery(document).ready(function($){
 
-    $('.minutemailer-signup').on('submit', function(e){
+    $('.minutemailer-widget-signup').on('submit', function(e){
     	// Stop submit
 		e.preventDefault();
 
