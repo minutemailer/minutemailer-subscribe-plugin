@@ -4,7 +4,7 @@
  * Plugin Name: Minutemailer Subscribe
  * Plugin URI: https://minutemailer.com
  * Description: Widget for signing up people to your Minutemailer contact list. Just add your API token from Minutemailer and add a widget to your sidebar to let people subscribe. Get your free Minutemailer account on minutemailer.com and start sending beautiful newsletters and plain emails.
- * Version: 1.2.1
+ * Version: 1.2.0
  * Author: Minutemailer
  * Author URI: https://minutemailer.com
  * Text Domain: minutemailer-subscribe
